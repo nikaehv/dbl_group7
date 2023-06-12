@@ -1,0 +1,25 @@
+.flex_container_instruction {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(108, 155, 207);
+  }
+  
+  .flex_container_instruction > div {
+    background-color: rgb(125, 163, 207);
+    margin: 5px;
+    padding: 30px;
+    font-size: 30px;
+  }
+  button {
+    background-color: rgb(83, 143, 211);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 40px;
+
+  }
+  button:hover{
+    opacity: 0.5;;
+    color: black;
+
+  }
