@@ -1,0 +1,33 @@
+.flex_container_instruction {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(108, 155, 207);
+  width:30;
+  flex-wrap: wrap;
+}
+
+.flex_container_instruction > div {
+  background-color: rgb(125, 163, 207);
+  margin: 10px;
+  padding: 10px;
+  font-size: 10px;
+}
+button {
+  background-color: rgb(83, 143, 211);
+  color: white;
+  border: none;
+  height: 40px;
+  width: 40px;
+
+}
+button:hover{
+  opacity: 0.5;;
+  color: black;
+
+}
+.flex_column{
+  display: flex; 
+  flex-direction: column;
+}
+
+

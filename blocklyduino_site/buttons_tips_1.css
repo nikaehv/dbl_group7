@@ -1,0 +1,99 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  background-color:  rgb(108, 155, 207);
+  width: 150px;
+  flex-wrap: wrap;
+  }
+  
+  .flex-container > div {
+  background-color:  rgb(125, 163, 207);
+  /*margin: 10px;*/
+  padding: 10px;
+  font-size: 10px;
+  }
+
+button {
+  background-color:   rgb(83, 143, 211);
+    color: rgb(255, 255, 255);
+  border: none;
+  height: 40px;
+  width: 40px;
+
+  }
+  button:hover{
+  opacity: 0.5;
+  color: black;
+
+  }
+
+
+  .categories {
+    display:flex;
+    flex-direction:column;
+    background-color: #A594F9;
+    padding: 10px;
+    height: 20%;
+    align-items: center;
+  }
+  .categories :hover{ 
+    opacity: 0.4;
+  }
+
+  .categories a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    padding: 5px; 
+    
+  }
+  
+  .parts {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(133, 133, 230);
+    padding: 15px;
+    padding-left: none;
+    list-style-type: none;
+    flex-wrap: wrap;
+
+  }
+  .parts  :hover{ 
+    opacity:0.4
+  }
+
+  
+  .part {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(245,239,255);
+    
+  }
+
+
+  .parts a {
+    text-decoration: none;
+    color: #181717;
+    padding: 5px;
+  }
+  
+  .part.active {
+    display: block;
+  }
+  .category {
+    display: none;
+  }
+  
+  .category.active {
+    display: block;
+  }
+.expand{
+  flex:1; 
+  width:100%
+}
+#exitButton{
+  background-color: #412234;
+}
+
+.category.open{
+  width:100px;
+}

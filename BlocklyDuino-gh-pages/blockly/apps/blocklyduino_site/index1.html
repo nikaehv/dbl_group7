@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>DBL HTI + Webtech</title>
+<link rel="stylesheet" href="index_style.css">
+<link rel="stylesheet" href="buttons_instruction_1.css">
+<link rel="stylesheet" href="buttons_tips_1.css">
+<link rel="stylesheet" href="progress.css">
+
+
+<body>
+  <header>
+    <div class="topnav">
+      <a class = "active" href="homepage.html">
+        <img src="image/home_icon.png" width="30">Homepage
+      </a>
+      <a href="index1.html"><img src="image/blockly_icon.png" width="30">Google Blockly</a>
+      <a href="http://dbl-hti-webtech.tomasvdlaan.nl"><img src="image/game_icon.png" width="30">Game</a>
+    </div>
+  </header>
+
+
+  <div id="main">
+    
+    <article>
+      <a href="indexabh.html"><h1>Google Blockly <img src="image/game_icon.png" width = "30"> </h1></a>
+      <div>
+        <iframe src="./indexabh.html" width='100%' height="1000px" title="description"></iframe>
+      </div>
+    </article>
+
+    <nav>
+      
+      <div class="categories">
+        <button id = "exitButton">Exit</button>
+        <a href="#Instructions"><h1>Instructions<img src="image/instructions_icon.png" width = "30" > </h1></a>
+        <a href="#Tips"><h1>Tips <img src="image/tips_icon.png" width = "30" length = "10"></h1></a>
+      </div>
+        
+        <div id="Instructions" class="category">
+          <ul class="parts">
+            <li><a href="#ipart1"><h3>Instructions part 1</h3></a></li>
+            <li><a href="#ipart2"><h3>Instructions part 2</h3></a></li>
+            <li><a href="#ipart3"><h3>Instructions part 3</h3></a></li>
+            <li><a href="#ipart4"><h3>Instructions part 4</h3></a></li>
+
+          </ul>
+          
+          <div id="ipart1" class="part">
+            <h2> <br>Step 1: Getting to know GoogleBlockly </h2>
+            <p>
+              <br>
+              <br>1. Look through the categories of the blocks, think about what some of the blocks can do 
+              <br>
+             <br>2. Try to drag some blocks from the sidebar into the center and into each other 
+               <br>
+               <br>3. Drag a block to the bottom right corner into the bin. This is how you can delete blocks	 
+               <br>
+                <br>Now you can work with GoogleBlockly! Go on to the first step
+        
+              
+            
+              <p>
+          </div>
+          
+          <div id="ipart2" class="part">
+            <h2>Step 2: Setting up the connection between the Arduino and the program. </h2>
+            <p>
+              <br>1. This step helps your program communicate with the joystick. 
+              <br>
+              <br>2. Find a block that helps you connect the program to the joystick. 
+              <br>
+              <br>3. Use that block to establish the connection between the program and the joystick. 
+
+
+
+            </p>
+          </div>
+          
+          <div id="ipart3" class="part">
+            <h2>Step 3: Reading the input from the joystick.</h2>
+            <p>
+              <br> 1. This step helps your program understand the movements of the joystick. 
+              <br>
+              <br> 2. Find a block that allows your program to receive information from the joystick. 
+              <br>
+              <br> 3. Use that block to read the input from the joystick. 
+            </p>
+          </div>
+
+          <div id="ipart4" class="part">
+            <h2>Step 4: Creating logical operations using if statements. </h2>
+            <p>
+              <br> 1. Think about how the movements of the joystick should affect the player. 
+              <br>
+              <br> 2. Find blocks that help you create rules based on the joystick's movements. 
+              <br>
+              <br> 3. Connect those blocks to the actions you want the player to perform. 
+              <br> 
+              <br> 4. Experiment with different combinations of blocks to see what works. 
+            </p>
+          </div>
+
+        </div>
+        
+        <div id="Tips" class="category">
+          <ul class="parts">
+            <li><a href="#part1"> <h3>Tips part 1</h3></a></li>
+            <li><a href="#part2"><h3>Tips part 2</h3></a></li>
+            <li><a href="#part3"><h3>Tips part 3</h3></a></li>
+          </ul>
+          
+          <div id="part1" class="part" >
+            <h2>Tips part 1</h2>
+            <p>Content of Part 1</p>
+          </div>
+          
+          <div id="part2" class="part">
+            <h2>Tips part 2</h2>
+            <p>Content of Part 2</p>
+          </div>
+          
+          <div id="part3" class="part">
+            <h2>Tips part 3</h2>
+            <p>Content of Part 3</p>
+          </div>
+          
+        </div>
+      </nav>
+      
+      
+      <script>
+// Add event listeners to category links
+
+var categoryLinks = document.querySelectorAll('.categories a');
+categoryLinks.forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var target = this.getAttribute('href');
+    var category = document.querySelector(target);
+
+    // Hide all categories
+    var categories = document.querySelectorAll('.category');
+    categories.forEach(function(category) {
+      category.style.display = 'none';
+    });
+
+    // Show the target category
+    category.style.display = 'block';
+
+    // Hide all parts within the target category
+    var parts = category.querySelectorAll('.part');
+    parts.forEach(function(part) {
+      part.style.display = 'none';
+    });
+  });
+});
+
+// Add event listeners to part links
+var partLinks = document.querySelectorAll('.parts a');
+partLinks.forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var target = this.getAttribute('href');
+    var part = document.querySelector(target);
+
+    // Hide all parts
+    var allParts = document.querySelectorAll('.part');
+    allParts.forEach(function(part) {
+      part.style.display = 'none';
+    });
+
+    // Show the target part
+    part.style.display = 'block';
+  });
+});
+
+
+  var exitButton = document.getElementById("exitButton");
+  var categories = document.querySelectorAll(".category");
+
+  exitButton.addEventListener("click", function () {
+    // Hide all categories
+    categories.forEach(function (category) {
+      category.style.display = "none";
+      category.classList.remove("open");
+    });
+  });
+
+  // Add event listeners to category links
+  var categoryLinks = document.querySelectorAll(".categories ul li a");
+  categoryLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      var target = this.getAttribute("href");
+      var category = document.querySelector(target);
+
+      // Toggle the class "open" on the clicked category
+      category.classList.toggle("open");
+
+      // Hide other categories
+      categories.forEach(function (otherCategory) {
+        if (otherCategory !== category) {
+          otherCategory.classList.remove("open");
+        }
+      });
+    });
+  });
+
+
+
+      </script>
+  </nav>
+      
+  <aside>
+    <div class = "container">
+      <h1>Step progress bar</h1>
+      <div id = "stepProgressBar">
+        <div class = "step">
+          <p class = "step-text">Step 1</p>
+          <div class = "bullet">1</div>
+
+          <div class = "step">
+            <p class = "step-text">Step 2</p>
+            <div class = "bullet">2</div>
+
+          <div class = "step">
+              <p class = "step-text">Step 3</p>
+              <div class = "bullet">3</div>
+
+            <div class = "step">
+                <p class = "step-text">Step 4</p>
+                <div class = "bullet">4</div>
+        </div>
+
+      </div>
+
+       
+      <div id="main">
+        <p id="content">Step Number 1</p>
+        
+        <button id = "previousBtn"> Previous</button>
+        <button id = "NextBtn"> Next</button>
+        <button id = "finishBtn"> Finish</button>
+      
+      </div>
+    
+
+
+
+    </div>
+
+
+
+<script>
+
+</script>
+
+  </aside>
+    
+  </div>
+  <footer><h3> <img src="image/score_icon.png" width = "30" >Score </h3></footer>
+</body>
+
+</html>
