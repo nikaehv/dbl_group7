@@ -459,11 +459,95 @@ function init() {
       <block type="p_left"></block>
       <block type="p_right"></block>
     </category>
-    <category name="Test">
-      <block type=""></block>
-    </category>
+
 
   </xml>
+
+  <!-- <script>  
+    //for one block checking                                                
+    function getAllBlocks() {                       
+    var workspace = Blockly.getMainWorkspace();
+    const blocks = workspace.getAllBlocks(false); 
+    if (blocks.length > 0) {  
+    for (var i = 0; i < blocks.length; i++) {
+      var block = blocks[i];
+      var blockType = block.type;
+  
+      if (blockType === "joystick_setup") {
+        console.log("First block detected");
+      }
+      if (blockType === "input") {
+        console.log("second block detected");
+      }
+    }
+  } else {
+    console.log("No blocks found in the workspace.");
+  }
+  } 
+    function startExecution() {
+        setInterval(getAllBlocks, 1000); 
+      }
+      startExecution(); 
+  </script> -->
+
+  <script>
+    function areBlocksConnected(block1, block2) {     //checks if block2 is connected below block1
+      var one_next = block1.getNextBlock();
+      if (one_next === block2) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+  function checkSolution(solutionSequence) {    //checks if blocks in workspace match given sequence of blocks
+    var workspace = Blockly.getMainWorkspace();
+    const blocks = workspace.getAllBlocks(false);
+    if (blocks.length > 0) {
+      var foundBlocks = new Map();
+      for (var i = 0; i < blocks.length; i++) {
+        var block = blocks[i];
+        var blockName = block.type; 
+        foundBlocks.set(blockName, block);
+      }
+      var isSolutionCorrect = true;
+      for (var i = 0; i < solutionSequence.length - 1; i++) {
+        var currentBlockName = solutionSequence[i];
+        var nextBlockName = solutionSequence[i + 1];
+        var currentBlock = foundBlocks.get(currentBlockName);
+        var nextBlock = foundBlocks.get(nextBlockName);
+        if (!currentBlock || !nextBlock || !areBlocksConnected(currentBlock, nextBlock)) {
+          isSolutionCorrect = false;
+          break;
+        }
+      }
+      
+      if (isSolutionCorrect) {
+        console.log("Blocks match the correct solution.");
+        return true;
+      } else {
+        console.log("Blocks do not match the correct solution.");
+        return false;
+      }
+    } else {
+      console.log("No blocks found in the workspace.");
+    }
+  }
+
+  function startExecution() {   //executes checkSolution once every second
+    var solutionSequence = ["joystick_setup", "input"];  // Correct solution of how blocks should be connected
+    setInterval(function() {
+      window.parent.postMessage(checkSolution(solutionSequence),'*');
+    }, 1000);
+  }
+  startExecution();
+  // TODO: you should check for length since "you" 
+  // is contained in "youtube" but youtube is 
+  // not hte correct word, assuming you is the correct one.
+
+  // the progress bar works. BUT it doesn't update properly. TODO: fix
+  </script>
+  
 </body>
 </html>
 

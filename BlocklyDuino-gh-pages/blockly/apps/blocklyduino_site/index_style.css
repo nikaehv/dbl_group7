@@ -18,21 +18,16 @@
   #main > aside {
     flex: 0 0 20vw;
     background: rgb(134, 180, 255);
+    border-style: solid; 
+    border-color: rgb(102, 149, 225);
     
   }
   #main > nav {
     order: -1;
-    
 
   }
 
-   footer {
-    background: rgb(32, 99, 200);
-    height: 20vh;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    justify-content: center; /* Added */
-  }
+
   footer, article, nav, aside {
     padding: 1em;
   }
@@ -58,9 +53,21 @@
   .topnav{
     background-color: rgb(98, 73, 255);
     overflow: hidden;
+    border-style: inset; 
+    border-style: thin;
+    border-color: rgb(77, 59, 196)
   }
+
+  .topnav_change{
+    background-color: rgb(187, 178, 251);
+    overflow: hidden;
+    border-style: inset; 
+    border-style: thin;
+    border-color: rgb(138, 132, 174)
+  }
+
   .topnav a:hover{
-    opacity: 0.5;
+    opacity: 0.1;
 
   }
   .topnav a { 
@@ -70,11 +77,26 @@
     padding: 20px 20px; 
     text-decoration: none;
     font-size: 18px;
+    border-style: inset;
+    border-width: thin;
+    border-color: rgb(81, 61, 212); 
+    
   }
 
   .homepage_text { 
     font-size: 20px;
     padding: 20px 20px;
+  }
+
+  aside {
+    font-family: "Muli", sans-serif;
+    background-color: #f6f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: 0;
   }
 
 
